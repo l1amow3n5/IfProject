@@ -19,7 +19,10 @@ public class GolfProperties
 	 */
 	public GolfProperties() 
 	{
-		
+		this.timeHours = -99;
+		this.timeMinutes = -99;
+		this.score = -99;
+		this.handicap = -99.99;
 	}
 	/**
 	 * 
@@ -66,7 +69,7 @@ public class GolfProperties
 	}
 	public void setName(String name)
 	{
-		this.name = name;
+		this.name = name; 
 	}
 	public void setGolfCourse(String golfCourse)
 	{
