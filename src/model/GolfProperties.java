@@ -16,7 +16,7 @@ public class GolfProperties
 	{
 		
 	}
-	public GolfProperties(String name, int timeHours, int timeMinutes, int score, double handicap,String golfCourse)
+	public GolfProperties(String name, int timeHours, int timeMinutes, int score, double handicap, String golfCourse)
 	{
 		this.name = name;
 		this.timeHours = timeHours;
