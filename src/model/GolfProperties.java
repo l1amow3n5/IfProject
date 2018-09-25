@@ -75,7 +75,7 @@ public class GolfProperties
 	{
 		this.golfCourse = golfCourse; 
 	}
-	public void setTimeHours(int timeHours)
+	public void setTimeHours(int timeHours) 
 	{
 		this.timeHours = timeHours;
 	}
