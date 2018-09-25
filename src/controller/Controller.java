@@ -18,14 +18,14 @@ public class Controller
 	public void start()
 
 	{
-		//String response = JOptionPane.showInputDialog(null, "How long did you play?");
-		//while(!validInt(response))
-		//{
-			//response = JOptionPane.showInputDialog(null, "Enter a whole number.");
-		//}
-		//userGolf.setTimeHours(Integer.parseInt(response));
+		String userInput = JOptionPane.showInputDialog(null, "How long did you play?");
+		while(!validInt(userInput))
+		{
+			userInput = JOptionPane.showInputDialog(null, "Enter a whole number.");
+		}
+		userGolf.setTimeHours(Integer.parseInt(userInput));
 		
-		String userInput = JOptionPane.showInputDialog(null, "What is your name?");
+		userInput = JOptionPane.showInputDialog(null, "What is your name?");
 		String name = null;
 		userGolf.setName(name); 
 		
@@ -33,11 +33,13 @@ public class Controller
 		int timeMinutes = -99;
 		if (validInt(userInput)) 
 		{
-			timeMinutes = Integer.parseInt(userInput);
+			timeMinutes = Integer.parseInt(userInput); 
 		}
 		userGolf.setTimeHours(timeMinutes);
 		
 		userInput = JOptionPane.showInputDialog(null, "What was your score?");
+		
+		JOptionPane.showMessageDialog(null, "You said you played for " + userGolf.getTimeHours() + " hours!"); 
 		
 		loopy();	
 	}
