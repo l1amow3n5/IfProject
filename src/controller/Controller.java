@@ -15,10 +15,10 @@ public class Controller
 		userGolf = new GolfProperties();
 	}
 	
-	public void start()
+	public void input()
 
 	{
-		String userInput = JOptionPane.showInputDialog(null, "How long did you play?");
+		String userInput = JOptionPane.showInputDialog(null, "How many hours did you play?");
 		int timeHours = -99;
 		if (validInt(userInput))
 		{
@@ -27,12 +27,8 @@ public class Controller
 		}
 		userGolf.setTimeHours(timeHours);
 		//JOptionPane.showMessageDialog(null, "You typed in: " + userGolf.getTimeHours());
-	
-		userInput = JOptionPane.showInputDialog(null, "What is your name?");
-		String name = userInput;
-		userGolf.setName(name); 
 		
-		userInput = JOptionPane.showInputDialog(null, "How many minutes did you play");
+	userInput = JOptionPane.showInputDialog(null, "How many minutes did you play");
 		int timeMinutes = -99;
 		if (validInt(userInput)) 
 		{
@@ -40,15 +36,27 @@ public class Controller
 		}
 		userGolf.setTimeMinutes(timeMinutes);
 		
+		userInput = JOptionPane.showInputDialog(null, "What is your name?");
+		String name = userInput;
+		userGolf.setName(name); 
+		
 		userInput = JOptionPane.showInputDialog(null, "What was your score?");
 		int score = -99;
 		if (validInt(userInput))
 		{
 			score = Integer.parseInt(userInput);
 		}
-		userGolf.setHandicap(score); 
+		userGolf.setScore(score); 
 		
-		JOptionPane.showMessageDialog(null, "You said you played for " + userGolf.getTimeHours() + " hours!"); 
+		userInput = JOptionPane.showInputDialog(null, "What is your handicap?");
+		double Handicap = -99.99;
+		if (validDouble(userInput))
+		{
+			Handicap = Double.parseDouble(userInput);
+		}
+		userGolf.setHandicap(Handicap);
+		
+		JOptionPane.showMessageDialog(null, "Your name is " + userGolf.getName() + ". \nYou said you played for " + userGolf.getTimeHours() + " hours and " + userGolf.getTimeMinutes() + " minutes!! " + "\n Your score was " +userGolf.getScore() + " and your handicap was " + userGolf.getHandicap() + "."); 
 		
 		loopy();	
 	}
@@ -87,7 +95,7 @@ public class Controller
 	{
 		//define a variable before the loop
 		boolean isFinished = false;
-		int someCount = 7;
+		int someCount = 0;
 		while (!isFinished)
 		{
 //			code
@@ -96,11 +104,19 @@ public class Controller
 			
 			someCount++;
 			someCount += 1;
-			if (someCount >= 20)
+			if (someCount >= 10)
 			{
 				isFinished = true;
 			}
 		}
 		
 	}
+	
+	public void start()
+	{
+		for (int loop = 5; loop >= 0; loop -= 1)
+		{
+			input(); 
+		}
+			
 }

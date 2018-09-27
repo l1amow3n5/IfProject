@@ -91,4 +91,14 @@ public class GolfProperties
 	{
 		this.handicap = handicap;
 	}
+	
+	public String toString()
+	{
+		String description = "Your name is " + name
+				+ "You said you played for " + timeHours + " hours and " + timeMinutes + " minutes!! "
+				+ "Your score was " + score + " and your handicap was " + handicap + ".";
+		
+		return description;
+	}
+	
 }
