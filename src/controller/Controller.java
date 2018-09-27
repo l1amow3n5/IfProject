@@ -7,37 +7,46 @@ import javax.swing.JOptionPane;
 public class Controller
 {
 	private GolfProperties userGolf;
-	private JOptionPane userInput;
+	//private JOptionPane userInput;
 	
 	
-	//public Controller()
-	//{
-		//userGolf = new GolfProperties();
-	//}
+	public Controller()
+	{
+		userGolf = new GolfProperties();
+	}
 	
 	public void start()
 
 	{
 		String userInput = JOptionPane.showInputDialog(null, "How long did you play?");
-		while(!validInt(userInput))
+		int timeHours = -99;
+		if (validInt(userInput))
 		{
-			userInput = JOptionPane.showInputDialog(null, "Enter a whole number.");
+			timeHours = Integer.parseInt(userInput);
+					//JOptionPane.showInputDialog(null, "Enter a whole number.");
 		}
-		userGolf.setTimeHours(Integer.parseInt(userInput));
-		
+		userGolf.setTimeHours(timeHours);
+		//JOptionPane.showMessageDialog(null, "You typed in: " + userGolf.getTimeHours());
+	
 		userInput = JOptionPane.showInputDialog(null, "What is your name?");
-		String name = null;
+		String name = userInput;
 		userGolf.setName(name); 
 		
-		userInput = JOptionPane.showInputDialog(null, "How many Hours did you play");
+		userInput = JOptionPane.showInputDialog(null, "How many minutes did you play");
 		int timeMinutes = -99;
 		if (validInt(userInput)) 
 		{
 			timeMinutes = Integer.parseInt(userInput); 
 		}
-		userGolf.setTimeHours(timeMinutes);
+		userGolf.setTimeMinutes(timeMinutes);
 		
 		userInput = JOptionPane.showInputDialog(null, "What was your score?");
+		int score = -99;
+		if (validInt(userInput))
+		{
+			score = Integer.parseInt(userInput);
+		}
+		userGolf.setHandicap(score); 
 		
 		JOptionPane.showMessageDialog(null, "You said you played for " + userGolf.getTimeHours() + " hours!"); 
 		
