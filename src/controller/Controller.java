@@ -16,7 +16,6 @@ public class Controller
 	}
 	
 	public void input()
-
 	{
 		String userInput = JOptionPane.showInputDialog(null, "How many hours did you play?");
 		int timeHours = -99;
@@ -28,7 +27,7 @@ public class Controller
 		userGolf.setTimeHours(timeHours);
 		//JOptionPane.showMessageDialog(null, "You typed in: " + userGolf.getTimeHours());
 		
-	userInput = JOptionPane.showInputDialog(null, "How many minutes did you play");
+		userInput = JOptionPane.showInputDialog(null, "How many minutes did you play");
 		int timeMinutes = -99;
 		if (validInt(userInput)) 
 		{
@@ -46,7 +45,18 @@ public class Controller
 		{
 			score = Integer.parseInt(userInput);
 		}
+		
 		userGolf.setScore(score); 
+		
+		if (score >= 45)
+		{
+			JOptionPane.showMessageDialog(null, "Maybe you should practice putting?");
+			input();
+		}
+		else
+		{
+			JOptionPane.showMessageDialog(null, "Nice Job!!! Your game has really improved."); 
+		}
 		
 		userInput = JOptionPane.showInputDialog(null, "What is your handicap?");
 		double Handicap = -99.99;
@@ -58,7 +68,9 @@ public class Controller
 		
 		JOptionPane.showMessageDialog(null, "Your name is " + userGolf.getName() + ". \nYou said you played for " + userGolf.getTimeHours() + " hours and " + userGolf.getTimeMinutes() + " minutes!! " + "\n Your score was " +userGolf.getScore() + " and your handicap was " + userGolf.getHandicap() + "."); 
 		
-		loopy();	
+		
+		
+		
 	}
 	public boolean validInt (String maybeInt) 
 	{
@@ -72,6 +84,20 @@ public class Controller
 		catch (NumberFormatException error)
 		{
 			JOptionPane.showMessageDialog(null, "You need to type a whole number");
+			
+			/*
+			boolean isFinished = false;
+			int someCount = 0;
+			while (isFinished)
+			{
+				JOptionPane.showInputDialog(null, "maybe you need to go practice putting.");
+				
+				if (someCount <= 45)
+				{
+					isFinished = true;
+				}
+			}
+			*/
 		}
 		return isValid; 
 	}
@@ -91,6 +117,7 @@ public class Controller
 		return isValid;
 	}
 	
+	/*
 	private void loopy() 
 	{
 		//define a variable before the loop
@@ -111,12 +138,16 @@ public class Controller
 		}
 		
 	}
+	*/
 	
 	public void start()
 	{
-		for (int loop = 5; loop >= 0; loop -= 1)
+		for (int loop = 1; loop >= 0; loop -= 1)
 		{
 			input(); 
-		}
 			
+		}
+	}
+	
+	
 }
