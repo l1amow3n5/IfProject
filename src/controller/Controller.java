@@ -3,6 +3,7 @@ package controller;
 //Import section
 import model.GolfProperties;
 import javax.swing.JOptionPane;
+import java.util.ArrayList;
 
 public class Controller
 {
@@ -72,6 +73,7 @@ public class Controller
 		
 		
 	}
+	
 	public boolean validInt (String maybeInt) 
 	{
 		boolean isValid = false;
@@ -101,6 +103,7 @@ public class Controller
 		}
 		return isValid; 
 	}
+	
 	public boolean validDouble(String mightBeDouble)
 	{
 		boolean isValid = false;
@@ -117,9 +120,10 @@ public class Controller
 		return isValid;
 	}
 	
-	/*
+	
 	private void loopy() 
 	{
+		/*
 		//define a variable before the loop
 		boolean isFinished = false;
 		int someCount = 0;
@@ -136,9 +140,10 @@ public class Controller
 				isFinished = true;
 			}
 		}
+		*/
 		
 	}
-	*/
+	
 	
 	public void start()
 	{
@@ -149,5 +154,26 @@ public class Controller
 		}
 	}
 	
+	/*ArrayList<Golf> myGolf = new ArrayList<Golf>();
 	
+	Golf sampleGolf = new Golf();
+	Golf otherGolf = new Golf();
+	
+	myGolf.add(sampleGolf);
+	myGolf.add(sampleGolf);
+	myGolf.add(otherGolf);
+	*/
+	
+	public void arraymethod()
+	{
+		ArrayList<String> golfCourse = new ArrayList<String>();
+		{
+			golfCourse.add("Riverbend");
+			golfCourse.add(1,"MickRiley");
+			
+			golfCourse.remove(1); 
+			
+		}
+		
+	}
 }
