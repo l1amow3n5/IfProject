@@ -170,6 +170,10 @@ public class Controller
 		{
 			golfCourse.add("Riverbend");
 			golfCourse.add(1,"MickRiley");
+			golfCourse.add("Glendale");
+			golfCourse.add("MountainView");
+			golfCourse.add("OldMill");
+			
 			
 			golfCourse.remove(1); 
 			
