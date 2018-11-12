@@ -48,7 +48,10 @@ public class Controller
 		}
 		
 		userGolf.setScore(score); 
-		
+		/**
+		 * this is an if loop that checks if the score you have put it in the JOptionPane window is 
+		 * acceptable and if it isn't then it starts the input method over again
+		 */
 		if (score >= 45)
 		{
 			JOptionPane.showMessageDialog(null, "Maybe you should practice putting?");
@@ -73,7 +76,9 @@ public class Controller
 		
 		
 	}
-	
+	/**
+	 * This code checks if what you put into the JOptionPane window is an Integer and if it isn't then it tells you to fix it
+	 */
 	public boolean validInt (String maybeInt) 
 	{
 		boolean isValid = false;
@@ -144,7 +149,10 @@ public class Controller
 		
 	}
 	
-	
+	/**
+	 * this repeats the input method by telling what number you want to start from and subtracting 1 until you get to zero and the program ends
+	 * 
+	 */
 	public void start()
 	{
 		for (int loop = 1; loop >= 0; loop -= 1)
@@ -163,13 +171,15 @@ public class Controller
 	myGolf.add(sampleGolf);
 	myGolf.add(otherGolf);
 	*/
-	
+	/**
+	 * this is an array list that I created to hold all of the golf courses that I can golf at I can use .add or .remove to add or remove courses from the list
+	 */
 	public void arraymethod()
 	{
 		ArrayList<String> golfCourse = new ArrayList<String>();
 		{
 			golfCourse.add("Riverbend");
-			golfCourse.add(1,"MickRiley");
+			golfCourse.add("MickRiley");
 			golfCourse.add("Glendale");
 			golfCourse.add("MountainView");
 			golfCourse.add("OldMill");
